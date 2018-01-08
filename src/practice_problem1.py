@@ -41,7 +41,7 @@ def main():
 
     run_test_init()
     run_test_append_string()
-#     run_test_double()
+    run_test_double()
 #     run_test_shrink()
 #     run_test_double_then_shrink()
 #     run_test_reset()
@@ -142,7 +142,7 @@ class Box(object):
           :type additional_contents: str
         """
         # --------------------------------------------------------------
-        # TODO: 3. Implement and test this function.
+        # Done: 3. Implement and test this function.
         #     See the testing code (below) for more examples.
         # --------------------------------------------------------------
         # --------------------------------------------------------------
@@ -166,10 +166,11 @@ class Box(object):
 
         if len(self.contents) + len(additional_contents) > self.volume:
             newstring = ''
-            for g in range(0,self.volume-len(self.contents)):
-                self.contents = self.contents + str(additional_contents[g])
-            for k in range(self.volume-len(self.contents), len(additional_contents)-1):
-                newstring = newstring + additional_contents[k]
+            for letter in additional_contents:
+                if len(self.contents) < self.volume:
+                    self.contents = self.contents + letter
+                else:
+                    newstring = newstring + letter
             return newstring
         else:
             self.contents = self.contents + additional_contents
@@ -182,7 +183,7 @@ class Box(object):
         What comes in:
           -- self
         What goes out:
-          Returrns a string that is whatever substring of the
+          Returns a string that is whatever substring of the
           doubled contents did not fit in this Box
           (or the empty string if the entire doubled contents fit)
         Side effects:
@@ -223,6 +224,12 @@ class Box(object):
         # FOR FULL CREDIT, YOUR SOLUTION MUST BE NO MORE THAN
         #    ** TWO **   LINES OF CODE.
         ################################################################
+        self.append_string(self.contents)
+
+
+
+
+
 
     def shrink(self, new_volume):
         """
