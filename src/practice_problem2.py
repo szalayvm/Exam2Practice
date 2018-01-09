@@ -2,8 +2,8 @@
 PRACTICE Test 2, practice_problem 2.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Victoria Szalay.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -42,7 +42,7 @@ def main():
 def run_test_practice_problem2a():
     """ Tests the   practice_problem2a  function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done: 2. Implement this TEST function.
     #   It TESTS the  practice_problem2a  function defined below.
     #   Include at least **   4 reasonable   ** tests.
     #
@@ -55,6 +55,29 @@ def run_test_practice_problem2a():
     print('--------------------------------------------------')
     print('Testing the   practice_problem2a   function:')
     print('--------------------------------------------------')
+    #Test #1
+    list = [1,2,3,4]
+    expectedlist = [2,3,4,5]
+    print('Expected:',expectedlist)
+    print('Actual:',practice_problem2a(list,1))
+
+    # Test #2
+    list = [1, 2, 3, 4]
+    expectedlist = [4, 5, 6, 7]
+    print('Expected:', expectedlist)
+    print('Actual:', practice_problem2a(list, 3))
+
+    # Test #3
+    list = [1, 3, 3, 4]
+    expectedlist = [6, 8, 8, 9]
+    print('Expected:', expectedlist)
+    print('Actual:', practice_problem2a(list, 5))
+
+    # Test #4
+    list = [1, 2, 3, 4, 5]
+    expectedlist = [2, 3, 4, 5, 6]
+    print('Expected:', expectedlist)
+    print('Actual:', practice_problem2a(list, 1))
 
 
 def practice_problem2a(sequence, delta):
@@ -83,6 +106,8 @@ def practice_problem2a(sequence, delta):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   5 minutes.
     ####################################################################
+    for k in range(len(sequence)):
+        sequence = sequence[k+delta]
 
 
 def run_test_practice_problem2b():
