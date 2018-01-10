@@ -448,17 +448,20 @@ def practice_problem3d(sequence):
       :type: sequence: list    or tuple or string
     """
     ####################################################################
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     ####################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes for each part of this problem.
     ####################################################################
-
+    '''for k in range(len(sequence)):
+        if sequence[k] == 0:
+            return k
+    return -1'''
 
     ####################################################################
-    # TODO: 6. Just ABOVE this TODO, you should have implemented
+    # Done: 6. Just ABOVE this Done, you should have implemented
     #     a solution for the   practice_problem3d   function.
     #     Here, put ANOTHER solution, as follows:
     #
@@ -472,6 +475,11 @@ def practice_problem3d(sequence):
     #
     #          This solution should *** HAVE NO LOOP (no FOR). ***
     ####################################################################
+    new_sequence = practice_problem3c(sequence)
+    if new_sequence == []:
+        return -1
+    else:
+        return new_sequence[0]
 
 
 def run_test_practice_problem3e():
@@ -541,6 +549,12 @@ def practice_problem3e(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   8 minutes.
     ####################################################################
+    s = 0
+    for k in range(len(sequence)):
+        if k % 2 == 0:
+            s = s + sequence[k]
+    return s
+
 
 
 # ----------------------------------------------------------------------
